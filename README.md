@@ -26,7 +26,8 @@ Permite leer y guardar el contenido del cartucho a través de comandos seriales.
 - SHIELD PARA ARDUINO MEGA
 
 ![SHIELD](Images/Parts/PCB_NEPTUNECD.png)
-![GERBER](Shield/Gerber GenDump.zip)
+
+[Descargar Gerber GenDump](Shield/Gerber%20GenDump.zip)
 
 - SLOT DE SEGA GENESIS (MEGA DRIVE)
 
