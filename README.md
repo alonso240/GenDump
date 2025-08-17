@@ -213,7 +213,7 @@ Este comando muestra la cabecera del cartucho.
 
 Cuando GenDump recibe el comando, envía la cabecera del cartucho en formato hexadecimal.
 
-Al final del comando se envía '_CABECERA_'.
+Al final del comando se envía `_CABECERA_`.
 
 Los datos de la cabecera se reparten así:
 
@@ -316,9 +316,9 @@ Con este comando empezamos el proceso de volcado del cartucho insertado.
 
 GenDump irá enviando páquetes cada 64 direcciones (para no saturar la RAM de la Arduino Mega) en formato hexadecimal.
 
-Sabremos que el proceso ha ternimado, cuando el paquete tenga el texto final "_FINDUMP_".
+Sabremos que el proceso ha ternimado, cuando el paquete tenga el texto final `_FINDUMP_`.
 
-Si en alguno de los paquetes recibimos el texto '_CANCELAR_', el proceso se cancelará.
+Si en alguno de los paquetes recibimos el texto `_CANCELAR_`, el proceso se cancelará.
 
 
 
