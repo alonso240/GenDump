@@ -320,20 +320,6 @@ Sabremos que el proceso ha ternimado, cuando el paquete tenga el texto final `_F
 
 Si en alguno de los paquetes recibimos el texto `_CANCELAR_`, el proceso se cancelará.
 
-
-
-
-
-
-## Instalación
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/alonso240/GenDump.git
-   ```
-2. Abre el proyecto en PlatformIO o Arduino IDE.
-3. Compila y sube el código al Arduino Mega.
-
 ## Créditos
 
 - alonso240
