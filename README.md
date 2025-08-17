@@ -23,35 +23,29 @@ El hardware está basado en el proyecto [Mega Mega Dumper](https://www.sodnpoo.c
 
 - ARDUINO MEGA
 <img src="Images/Parts/Arduino_Mega.jpg" alt="Arduino Mega" width="300"/>
-![Arduino Mega](Images/Parts/Arduino_Mega.jpg)
 
 - SHIELD PARA ARDUINO MEGA
-
-![SHIELD](Images/Parts/PCB_NEPTUNECD.png)
+<img src="Images/Parts/PCB_NEPTUNECD.png" alt="Shield" width="300"/>
 
 [Descargar Gerber GenDump](Shield/Gerber%20GenDump.zip)
 
 - SLOT DE SEGA GENESIS (MEGA DRIVE)
-
-![SLOT](Images/Parts/Slot_Megadrive.jpg)
+<img src="Images/Parts/Slot_Megadrive.jpg" alt="Slot" width="300"/>
 
 - 1 RESISTENCIA DE 4K7
-
-![RESISTENCIA 4K7](Images/Parts/Res4k7.jpg)
+<img src="Images/Parts/Res4k7.jpg" alt="Resistencia 4K7" width="300"/>
 
 - 47 PINES
-
-![47 PINES](Images/Parts/pines_macho.jpg)
+<img src="Images/Parts/pines_macho.jpg" alt="47 Pines" width="300"/>
 
 ### Aspecto de la Shield
+<img src="Images/Shield/PcbLectorCart1.png" alt="Shield" width="300"/>
 
-![SHIELD](Images/Shield/PcbLectorCart1.png)
+<img src="Images/Shield/PcbLectorCart12.png" alt="Shield" width="300"/>
 
-![SHIELD](Images/Shield/PcbLectorCart2.png)
+<img src="Images/Shield/PcbLectorCart3.png" alt="Shield" width="300"/>
 
-![SHIELD](Images/Shield/PcbLectorCart3.png)
-
-![SHIELD](Images/Shield/PcbLectorCart4.png)
+<img src="Images/Shield/PcbLectorCart4.png" alt="Shield" width="300"/>
 
 ## Comunicación Serial
 
@@ -74,7 +68,7 @@ El hardware está basado en el proyecto [Mega Mega Dumper](https://www.sodnpoo.c
 Debemos saber el nombre de los pines de los cartuchos y que función tiene cada uno.
 Así podemos configurar las direcciones y leer los valores.
 
-![PINES CARTUCHO](Images/Conection/Genesis-cart-pins.jpg)
+<img src="Images/Conection/Genesis-cart-pins.jpg" alt="Pines cartucho" width="300"/>
 
 #### Pines
 
@@ -140,18 +134,12 @@ Así podemos configurar las direcciones y leer los valores.
 | /MRES      | Reseteo completo (por ejemplo, botón de encendido)           |
 | /VRES      | Reseteo parcial (por ejemplo, botón de reinicio)             |
 
-
-
-
-
-
-
 ### Pines Arduino
 
 Cada pin de los cartuchos irán a un pin de la placa Arduino.
 Hay varios pines del cartucho que van a GND, pero no estoy seguro si deberían estar conectados a pines de Arduino para poder manejar la lectura de memoria u otras funciones.
 
-![PINES ARDUINO MEGA](Images/Conection/Arduino_mega_pinout.png)
+<img src="Images/Conection/Arduino_mega_pinout.png" alt="Pines Arduino Mega" width="300"/>
 
 #### Pines
 
