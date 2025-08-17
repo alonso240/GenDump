@@ -230,6 +230,42 @@ Cuando GenDump recibe el comando, envía la cabecera del cartucho en formato hex
 
 Al final del comando se envía "_CABECERA_".
 
+Los datos de la cabecera se reparten así:
+
+<table>
+  <tr>
+    <th>DIRECCIÓN</th>
+    <th colspan="16">Contenido</th>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td colspan="16">HARDWARE</td>
+  </tr>
+  <tr>
+    <td>110</td>
+    <td colspan="16">COMPAÑÍA, FECHA</td>
+  </tr>
+  <tr>
+    <td>120</td>
+    <td colspan="16">NOMBRE LOCAL</td>
+  </tr>
+  <tr>
+    <td>150</td>
+    <td colspan="16">NOMBRE INTERNACIONAL</td>
+  </tr>
+  <tr>
+    <td>180</td>
+    <td colspan="8">ID</td>
+    <td colspan="8">CHECKSUM</td>
+  </tr>
+  <tr>
+    <td>1A0</td>
+    <td colspan="4">DIR. ROM MIN.</td>
+    <td colspan="4">DIR. ROM MAX.</td>
+    <td colspan="4">DIR. RAM MIN.</td>
+    <td colspan="4">DIR. RAM MAX.</td>
+  </tr>
+</table>
 
 
 																
