@@ -19,18 +19,23 @@ Permite leer y guardar el contenido del cartucho a través de comandos seriales.
 ### Partes
 
 - ARDUINO MEGA
+
 ![Arduino Mega](Images/Parts/Arduino_Mega.jpg)
 
 - SHIELD PARA ARDUINO MEGA
+
 ![Arduino Mega](Images/Parts/PCB_NEPTUNECD.png)
 
 - SLOT DE SEGA GENESIS (MEGA DRIVE)
+
 ![Arduino Mega](Images/Parts/Slot_Megadrive.jpg)
 
 - 1 RESISTENCIA DE 4K7
+
 ![Arduino Mega](Images/Parts/Res4k7.jpg)
 
 - 47 PINES
+
 ![Arduino Mega](Images/Parts/pines_macho.jpg)
 
 ### Ejemplo de conexión
