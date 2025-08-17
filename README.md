@@ -41,7 +41,7 @@ El hardware está basado en el proyecto [Mega Mega Dumper](https://www.sodnpoo.c
 ### Aspecto de la Shield
 <img src="Images/Shield/PcbLectorCart1.png" alt="Shield" width="300"/>
 
-<img src="Images/Shield/PcbLectorCart12.png" alt="Shield" width="300"/>
+<img src="Images/Shield/PcbLectorCart2.png" alt="Shield" width="300"/>
 
 <img src="Images/Shield/PcbLectorCart3.png" alt="Shield" width="300"/>
 
@@ -338,9 +338,3 @@ Si en alguno de los paquetes recibimos el texto "_CANCELAR_", el proceso se canc
 
 - alonso240
 - Luiti
-
----
-
-> **Nota:**  
-> Para mostrar imágenes, colócalas en la carpeta `images` dentro del repositorio y usa la sintaxis `![Texto alternativo](images/nombre_imagen.png)`.  
-> Si usas enlaces externos, reemplaza la ruta por la URL directa.
