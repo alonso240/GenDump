@@ -62,10 +62,11 @@ El hardware está basado en el proyecto [Mega Mega Dumper](https://www.sodnpoo.c
 ### Pines de los cartuchos
 
 Debemos saber el nombre de los pines de los cartuchos y que función tiene cada uno.
+Así podemos configurar las direcciones y leer los valores.
 
 ![PINES CARTUCHO](Images/Conection/Genesis-cart-pins.jpg)
 
-#### Funciones
+#### Pines
 
 | PIN TRASERO | FUNCION  | PIN DELANTERO | FUNCION |
 |-------------|----------|---------------|---------|
@@ -102,6 +103,54 @@ Debemos saber el nombre de los pines de los cartuchos y que función tiene cada 
 | A31         | VCC      | B31           | /TIME   |
 | A32         | GND      | B32           | /CART   |
 
+### Pines Arduino
+
+Cada pin de los cartuchos irán a un pin de la placa Arduino.
+Hay varios pines del cartucho que van a GND, pero no estoy seguro si deberían estar conectados a pines de Arduino para poder manejar la lectura de memoria u otras funciones.
+
+![PINES ARDUINO MEGA](Images/Conection/Arduino_mega_pinout.png)
+
+#### Pines
+
+Cada pin del cartucho se conecta a un pin de la placa Arduino.
+
+| PIN TRASERO | ARDUINO  | PIN DELANTERO | ARDUINO    |
+| CARTUCHO    | MEGA     | CARTUCHO      | MEGA       |
+|-------------|----------|---------------|------------|
+| A1          | GND      | B1            |            |
+| A2          | 5V       | B2            |            |
+| A3          | 8        | B3            |            |
+| A4          | 9        | B4            | 53         |
+| A5          | 23       | B5            | 51         |
+| A6          | 25       | B6            | 49         |
+| A7          | 27       | B7            | 47         |
+| A8          | 6        | B8            | 45         |
+| A9          | 5        | B9            | 43         |
+| A10         | 4        | B10           | 41         |
+| A11         | 3        | B11           | 39         |
+| A12         | 2        | B12           |            |
+| A13         | 29       | B13           |            |
+| A14         | 31       | B14           |            |
+| A15         | 33       | B15           |            |
+| A16         | 35       | B16           | OE (GND)   |
+| A17         | 37       | B17           | CS (GND)   |
+| A18         | GND      | B18           | AS (GND)   |
+| A19         | 36       | B19           |            |
+| A20         | 38       | B20           |            |
+| A21         | 40       | B21           |            |
+| A22         | 42       | B22           | 46         |
+| A23         | 44       | B23           | 48         |
+| A24         | 34       | B24           | 50         |
+| A25         | 32       | B25           | 52         |
+| A26         | 30       | B26           |            |
+| A27         | 28       | B27           | RESET (GND)|
+| A28         | 26       | B28           | WE (GND)   |
+| A29         | 24       | B29           |            |
+| A30         | 22       | B30           |            |
+| A31         | 5V       | B31           |            |
+| A32         | GND      | B32           | A0*        |
+
+*Si recibe GND es que hay un cartucho insertado.
 
 ## Instalación
 
