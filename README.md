@@ -293,11 +293,38 @@ Los datos de la cabecera se reparten así:
     <td colspan="3">CHECKSUM</td>
   </tr>
   <tr>
+    <td>190</td>
+    <td colspan="16">E/S</td>
+  </tr>
+  <tr>
     <td>1A0</td>
     <td colspan="4">DIR. ROM MIN.</td>
     <td colspan="4">DIR. ROM MAX.</td>
     <td colspan="4">DIR. RAM MIN.</td>
     <td colspan="4">DIR. RAM MAX.</td>
+  </tr>
+  <tr>
+    <td>1B0</td>
+    <td colspan="12">EXTERNAL RAM DATA</td>
+    <td colspan="4">MODEM INFO</td>
+  </tr>
+   <tr>
+    <td>1C0</td>
+    <td colspan="8">MODEM INFO</td>
+  </tr>
+  
+   <tr>
+    <td>1D0</td>
+    <td colspan="16"></td>
+  </tr>
+   <tr>
+    <td>1E0</td>
+    <td colspan="16"></td>
+  </tr>
+  
+   <tr>
+    <td>1F0</td>
+    <td colspan="16">REGIÓN</td>
   </tr>
 </table>
 
