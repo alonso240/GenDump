@@ -22,7 +22,7 @@ El hardware está basado en el proyecto [Mega Mega Dumper](https://www.sodnpoo.c
 ### Partes
 
 - ARDUINO MEGA
-
+<img src="Images/Parts/Arduino_Mega.jpg" alt="Arduino Mega" width="300"/>
 ![Arduino Mega](Images/Parts/Arduino_Mega.jpg)
 
 - SHIELD PARA ARDUINO MEGA
@@ -199,22 +199,19 @@ Cada pin del cartucho se conecta a un pin de la placa Arduino.
 Para que GenDump funcione, debe recibir comandos.
 Los comandos se deben enviar por el puerto serial.
 
-- `#` : Inicia el volcado completo del cartucho
-- `_C` : Muestra la cabecera del cartucho
-
-#### Comando "I"
+#### - Comando "I"
 
 Este comando consulta la versión del programa.
 
 Cuando GenDump recibe el comando, envía la versión de GenDump.
 
-#### Comando "A"
+#### - Comando "A"
 
 Este comando consulta si hay un cartucho insertado.
 
 Cuando GenDump recibe el comando, envía un "1" si hay un cartucho insertado y un "0" si no lo hay.
 
-#### Comando "@NÚMERO"
+#### - Comando "@NÚMERO"
 
 Este comando lee el código del cartucho según la dirección "NÚMERO".
 
@@ -222,7 +219,7 @@ Cuando GenDump recibe el comando, envía el código hexadecimal del cartucho.
 
 La dirección debe ser un número entero.
 
-#### Comando "_C"
+#### - Comando "_C"
 
 Este comando muestra la cabecera del cartucho.
 
@@ -268,7 +265,6 @@ Los datos de la cabecera se reparten así:
     <td>130</td>
     <td colspan="16">NOMBRE LOCAL</td>
   </tr>
-  
   <tr>
     <td>140</td>
     <td colspan="16">NOMBRE LOCAL</td>
@@ -312,7 +308,6 @@ Los datos de la cabecera se reparten así:
     <td>1C0</td>
     <td colspan="8">MODEM INFO</td>
   </tr>
-  
    <tr>
     <td>1D0</td>
     <td colspan="16"></td>
@@ -321,34 +316,23 @@ Los datos de la cabecera se reparten así:
     <td>1E0</td>
     <td colspan="16"></td>
   </tr>
-  
    <tr>
     <td>1F0</td>
     <td colspan="16">REGIÓN</td>
   </tr>
 </table>
 
+#### - Comando "#"
 
-																
-| DIRECCIÓN | 0	| 1	| 2	| 3	| 4	| 5	| 6	| 7	| 8	| 9	| A	| B	| C	| D	| E	| F	|
-|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 100	    |                          HARDWARE     	                    |														
-| 110       |	                    COMPAÑÍA, FECHA							|								
-120	NOMBRE LOCAL															
-130																
-140																
-150	NOMBRE INTERNACIONAL															
-160																
-170																
-180	ID													CHECKSUM		
-190	E/S															
-1A0	DIR. ROM MIN.				DIR. ROM MAX.				DIR. RAM MIN.				DIR. RAM MAX.			
-1B0	EXTERNAL RAM DATA												MODEM INFO			
-1C0	MODEM INFO								VACIO							
-1D0	VACIO															
-1E0																
-1F0	REGIÓN															
-																
+Con este comando empezamos el proceso de volcado del cartucho insertado.
+
+GenDump irá enviando páquetes cada 64 direcciones (para no saturar la RAM de la Arduino Mega) en formato hexadecimal.
+
+Sabremos que el proceso ha ternimado, cuando el paquete tenga el texto final "_FINDUMP_".
+
+Si en alguno de los paquetes recibimos el texto "_CANCELAR_", el proceso se cancelará.
+
+
 
 
 
