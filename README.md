@@ -43,6 +43,16 @@ El hardware está basado en el proyecto [Mega Mega Dumper](https://www.sodnpoo.c
 
 ![47 PINES](Images/Parts/pines_macho.jpg)
 
+### Aspecto de la Shield
+
+![SHIELD](Images/Shield/PcbLectorCart1.png)
+
+![SHIELD](Images/Shield/PcbLectorCart2.png)
+
+![SHIELD](Images/Shield/PcbLectorCart3.png)
+
+![SHIELD](Images/Shield/PcbLectorCart4.png)
+
 ## Comunicación Serial
 
 ### Configuración
@@ -103,6 +113,39 @@ Así podemos configurar las direcciones y leer los valores.
 | A31         | VCC      | B31           | /TIME   |
 | A32         | GND      | B32           | /CART   |
 
+##### Funciones
+
+| FUNCION    | DESCRIPCION                                                  |
+|------------|--------------------------------------------------------------|
+| /M3        | Dejar flotando para el modo Mega Drive                       |
+| /CART      | GND si hay cartucho insertado                                |
+| VD0 - VD15 | Bus de datos                                                 |
+| VA1 - VA23 | Bus de direcciones                                           |
+| /CE_0      | Chip habilitado para $000000 - $3FFFFF                       |
+| /TIME      | Chip habilitado para $A13000 - $A130FF                       |
+| /UWR       | Escribir enable para el byte superior de una palabra         |
+| /LWR       | Escribir enable para el byte inferior de una palabra         |
+| /CAS0      | Chip habilitado para $000000 - $DFFFFF                       |
+| /CAS2      | Luz estroboscópica de dirección de columna para DRAM         |
+| /ASEL      | Control múltiplex de direcciones de file / columna para DRAM |
+| /DTACK     | 68000 Reconocimiento de datos                                |
+| /AS        | Luz estroboscópica de direcciones 68000                      |
+| VCLK       | Reloj 68000                                                  |
+| EDCLK      | Reloj de vídeo H40                                           |
+| /VSYNC     | Sincronización verical de la señal de vídeo                  |
+| /HSYNC     | Sincronización horizontal de la señal de vídeo               |
+| /YS        | Se afirma al generar el color de fondo                       |
+| SL1        | Entrada de audio analógica (altavoz izquierdo)               |
+| SR1        | Entrada de audio analógica (altavoz derecho)                 |
+| /MRES      | Reseteo completo (por ejemplo, botón de encendido)           |
+| /VRES      | Reseteo parcial (por ejemplo, botón de reinicio)             |
+
+
+
+
+
+
+
 ### Pines Arduino
 
 Cada pin de los cartuchos irán a un pin de la placa Arduino.
@@ -115,7 +158,6 @@ Hay varios pines del cartucho que van a GND, pero no estoy seguro si deberían e
 Cada pin del cartucho se conecta a un pin de la placa Arduino.
 
 | PIN TRASERO | ARDUINO  | PIN DELANTERO | ARDUINO    |
-| CARTUCHO    | MEGA     | CARTUCHO      | MEGA       |
 |-------------|----------|---------------|------------|
 | A1          | GND      | B1            |            |
 | A2          | 5V       | B2            |            |
@@ -151,6 +193,68 @@ Cada pin del cartucho se conecta a un pin de la placa Arduino.
 | A32         | GND      | B32           | A0*        |
 
 *Si recibe GND es que hay un cartucho insertado.
+
+### Funcionamiento de la placa
+
+Para que GenDump funcione, debe recibir comandos.
+Los comandos se deben enviar por el puerto serial.
+
+- `#` : Inicia el volcado completo del cartucho
+- `_C` : Muestra la cabecera del cartucho
+
+#### Comando "I"
+
+Este comando consulta la versión del programa.
+
+Cuando GenDump recibe el comando, envía la versión de GenDump.
+
+#### Comando "A"
+
+Este comando consulta si hay un cartucho insertado.
+
+Cuando GenDump recibe el comando, envía un "1" si hay un cartucho insertado y un "0" si no lo hay.
+
+#### Comando "@NÚMERO"
+
+Este comando lee el código del cartucho según la dirección "NÚMERO".
+
+Cuando GenDump recibe el comando, envía el código hexadecimal del cartucho.
+
+La dirección debe ser un número entero.
+
+#### Comando "_C"
+
+Este comando muestra la cabecera del cartucho.
+
+Cuando GenDump recibe el comando, envía la cabecera del cartucho en formato hexadecimal.
+
+Al final del comando se envía "_CABECERA_".
+
+
+
+																
+| DIRECCIÓN | 0	| 1	| 2	| 3	| 4	| 5	| 6	| 7	| 8	| 9	| A	| B	| C	| D	| E	| F	|
+|-----------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 100	    |                          HARDWARE     	                    |														
+| 110       |	                    COMPAÑÍA, FECHA							|								
+120	NOMBRE LOCAL															
+130																
+140																
+150	NOMBRE INTERNACIONAL															
+160																
+170																
+180	ID													CHECKSUM		
+190	E/S															
+1A0	DIR. ROM MIN.				DIR. ROM MAX.				DIR. RAM MIN.				DIR. RAM MAX.			
+1B0	EXTERNAL RAM DATA												MODEM INFO			
+1C0	MODEM INFO								VACIO							
+1D0	VACIO															
+1E0																
+1F0	REGIÓN															
+																
+
+
+
 
 ## Instalación
 
