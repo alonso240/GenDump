@@ -235,7 +235,22 @@ Los datos de la cabecera se reparten así:
 <table>
   <tr>
     <th>DIRECCIÓN</th>
-    <th colspan="16">Contenido</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+    <th>7</th>
+    <th>8</th>
+    <th>9</th>
+    <th>A</th>
+    <th>B</th>
+    <th>C</th>
+    <th>D</th>
+    <th>E</th>
+    <th>F</th>
   </tr>
   <tr>
     <td>100</td>
@@ -250,13 +265,32 @@ Los datos de la cabecera se reparten así:
     <td colspan="16">NOMBRE LOCAL</td>
   </tr>
   <tr>
+    <td>130</td>
+    <td colspan="16">NOMBRE LOCAL</td>
+  </tr>
+  
+  <tr>
+    <td>140</td>
+    <td colspan="16">NOMBRE LOCAL</td>
+  </tr>
+  <tr>
     <td>150</td>
     <td colspan="16">NOMBRE INTERNACIONAL</td>
   </tr>
   <tr>
+  <tr>
+    <td>160</td>
+    <td colspan="16">NOMBRE INTERNACIONAL</td>
+  </tr>
+  <tr>
+  <tr>
+    <td>170</td>
+    <td colspan="16">NOMBRE INTERNACIONAL</td>
+  </tr>
+  <tr>
     <td>180</td>
-    <td colspan="8">ID</td>
-    <td colspan="8">CHECKSUM</td>
+    <td colspan="13">ID</td>
+    <td colspan="3">CHECKSUM</td>
   </tr>
   <tr>
     <td>1A0</td>
